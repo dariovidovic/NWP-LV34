@@ -19,6 +19,10 @@ Route::get('/projects', [ProjectController::class, 'index'])->name('projects.ind
 Route::get('/projects/myProjects', [ProjectController::class, 'fetch'])->name('projects.fetch');
 Route::post('/project-members', [ProjectMembersController::class, 'assign'])->name('project_members.assign');
 Route::get('/projects/workingProjects', [ProjectMembersController::class, 'search'])->name('projects.search');
+Route::get('/projects/{projectId}/edit', [ProjectController::class, 'edit'])->name('edit.project');
+Route::get('/projects/{projectId}/leadEdit', [ProjectController::class, 'leadEdit'])->name('leadEdit.project');
+Route::put('/projects/{projectId}/update', [ProjectController::class, 'update'])->name('update.project');
+Route::put('/projects/{projectId}/leadUpdate', [ProjectController::class, 'leadUpdate'])->name('leadUpdate.project');
 
 
 
